@@ -39,9 +39,7 @@ sudo cp -i /etc/kubernetes/admin.conf "$HOME"/.kube/config
 sudo chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
 
 # Install Claico Network Plugin Network 
-<<<<<<< HEAD
-kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
-=======
+
 # Install Tigera Operator and CRDs
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.31.3/manifests/operator-crds.yaml
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.31.3/manifests/tigera-operator.yaml
@@ -67,4 +65,3 @@ sed -i "s|cidr: 192.168.0.0/16|cidr: $CLUSTER_CIDR|g" custom-resources.yaml
 # Apply custom resources
 kubectl apply -f custom-resources.yaml
 sleep 60
->>>>>>> b9f433d ([CR-1285][update scripts])
